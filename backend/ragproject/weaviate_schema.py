@@ -17,7 +17,7 @@ def create_schema():
         "properties": [
             {
                 "name": "title", 
-                "dataType": ["string"], 
+                "dataType": ["text"], 
                 "indexInverted": True
             },
             {
@@ -42,15 +42,15 @@ def create_schema():
             },
             {
                 "name": "exams",
-                "dataType": ["string"]
+                "dataType": ["text[]"]
             },
             {
                 "name": "tags",
-                "dataType": ["string"]
+                "dataType": ["text[]"]
             },
             {
                 "name": "sourceUrl", 
-                "dataType": ["string"], 
+                "dataType": ["text"], 
                 "indexInverted": True
             },
             {
