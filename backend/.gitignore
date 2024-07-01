@@ -1,0 +1,42 @@
+# backend directory git ignore
+3.11venv/
+fine_tuning/
+node_modules/
+cli-prompts.text
+.env
+
+# Python-specific ignores
+__pycache__/
+*.py[cod]
+
+# SQLite database files
+*.sqlite3
+
+# Static files (CSS, JavaScript, Images)
+staticfiles/
+
+# Media files (uploads)
+mediafiles/
+
+# Django migrations
+**/migrations/
+
+# Jupyter Notebook checkpoints
+**/.ipynb_checkpoints
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Temporary files created by editors
+*~
+*.swp
+*.tmp
+*.temp

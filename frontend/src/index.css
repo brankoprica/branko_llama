@@ -1,0 +1,107 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 24px;
+    height: 24px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes wave {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+   100% { transform: rotate( 0.0deg) }
+  }
+  
+  .animate-wave {
+    display: inline-block;
+    animation: wave 1s ease-in-out 1;
+    transform-origin: 70% 70%;
+  }
+  
+
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 20 14.3% 4.1%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 20 14.3% 4.1%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 20 14.3% 4.1%;
+
+      --primary: 24 9.8% 10%;
+      --primary-foreground: 60 9.1% 97.8%;
+
+      --secondary: 60 4.8% 95.9%;
+      --secondary-foreground: 24 9.8% 10%;
+
+      --muted: 60 4.8% 95.9%;
+      --muted-foreground: 25 5.3% 44.7%;
+
+      --accent: 60 4.8% 95.9%;
+      --accent-foreground: 24 9.8% 10%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 60 9.1% 97.8%;
+
+      --border: 20 5.9% 90%;
+      --input: 20 5.9% 90%;
+      --ring: 20 14.3% 4.1%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 20 14.3% 4.1%;
+      --foreground: 60 9.1% 97.8%;
+
+      --card: 20 14.3% 4.1%;
+      --card-foreground: 60 9.1% 97.8%;
+
+      --popover: 20 14.3% 4.1%;
+      --popover-foreground: 60 9.1% 97.8%;
+
+      --primary: 60 9.1% 97.8%;
+      --primary-foreground: 24 9.8% 10%;
+
+      --secondary: 12 6.5% 15.1%;
+      --secondary-foreground: 60 9.1% 97.8%;
+
+      --muted: 12 6.5% 15.1%;
+      --muted-foreground: 24 5.4% 63.9%;
+
+      --accent: 12 6.5% 15.1%;
+      --accent-foreground: 60 9.1% 97.8%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 60 9.1% 97.8%;
+
+      --border: 12 6.5% 15.1%;
+      --input: 12 6.5% 15.1%;
+      --ring: 24 5.7% 82.9%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }

@@ -1,0 +1,50 @@
+---
+services:
+  weaviate:
+    command:
+    - --host
+    - 0.0.0.0
+    - --port
+    - '8080'
+    - --scheme
+    - http
+    image: cr.weaviate.io/semitechnologies/weaviate:1.25.3
+    ports:
+    - 8080:8080
+    - 50051:50051
+    volumes:
+    - weaviate_data:/var/lib/weaviate
+    restart: on-failure:0
+    environment:
+      CLIP_INFERENCE_API: 'http://multi2vec-clip:8080'
+      QNA_INFERENCE_API: 'http://qna-transformers:8080'
+      NER_INFERENCE_API: 'http://ner-transformers:8080'
+      SUM_INFERENCE_API: 'http://sum-transformers:8080'
+      SPELLCHECK_INFERENCE_API: 'http://text-spellcheck:8080'
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      DEFAULT_VECTORIZER_MODULE: 'multi2vec-clip'
+      ENABLE_MODULES: 'multi2vec-clip,qna-transformers,ner-transformers,sum-transformers,text-spellcheck,ref2vec-centroid'
+      CLUSTER_HOSTNAME: 'node1'
+  multi2vec-clip:
+    image: cr.weaviate.io/semitechnologies/multi2vec-clip:openai-clip-vit-base-patch16
+    environment:
+      ENABLE_CUDA: '0'
+  qna-transformers:
+    image: cr.weaviate.io/semitechnologies/qna-transformers:distilbert-base-uncased-distilled-squad
+    environment:
+      ENABLE_CUDA: '0'
+  ner-transformers:
+    image: cr.weaviate.io/semitechnologies/ner-transformers:dbmdz-bert-large-cased-finetuned-conll03-english
+    environment:
+      ENABLE_CUDA: '0'
+  sum-transformers:
+    image: cr.weaviate.io/semitechnologies/sum-transformers:facebook-bart-large-cnn-1.0.0
+    environment:
+      ENABLE_CUDA: '0'
+  text-spellcheck:
+    image: cr.weaviate.io/semitechnologies/text-spellcheck-model:pyspellchecker-en
+volumes:
+  weaviate_data:
+...

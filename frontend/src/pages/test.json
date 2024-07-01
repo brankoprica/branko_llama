@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Section 2: Admission for Assessment",
+        "content": "Purpose: To assess a patient, potentially followed by treatment. /n Duration: Up to 28 days, non-renewable. /n Professionals involved: Two doctors, one Approved Mental Health Professional (AMHP). /n Use: Applied when a patient needs assessment for a mental disorder. Transition to Section 3 is possible for treatment."
+    },
+    {
+        "name": "Section 3: Admission for Treatment",
+        "content": "Purpose: Long-term treatment of a mental disorder. /n Duration: Initially six months, renewable for further six months and subsequently annual renewals. /n Professionals involved: Two doctors, one AMHP. /n Use: Used when treatment under a structured framework is necessary, with sufficient medical recommendations."
+    },
+    {
+        "name": "Section 4: Emergency Admission for Assessment",
+        "content": "Purpose: Urgent assessment of a patient. /n Duration: Up to 72 hours. /n Professionals involved: One doctor, one AMHP. /n Use: Reserved for emergencies where obtaining a second medical opinion would cause undesirable delay. Aimed at immediate risks to health or safety."
+    },
+    {
+        "name": "Section 5: Holding Powers",
+        "content": "Nurse’s Holding Power (5(4)): Allows certain nurses to detain a patient for up to 6 hours. /n Doctor’s Holding Power (5(2)): A doctor can detain a patient for up to 72 hours. /n Use: These powers are used to detain a patient temporarily until a formal assessment under other sections can be arranged."
+    },
+    {
+        "name": "Section 135: Warrant for Entry",
+        "content": "Purpose: Allows police officers to enter premises to remove a person to a place of safety for assessment. /n Duration: The person can be held for up to 72 hours for assessment. /n Professionals involved: Police, AMHP, one doctor. /n Use: Utilized when there is concern about a person’s mental health in their residence, and access is denied or the person is unable to care for themselves."
+    },
+    {
+        "name": "Section 136: Police Powers and Places of Safety",
+        "content": "Purpose: Enables police to take someone who appears to be suffering from a mental disorder, in a public place, to a place of safety for assessment. /n Duration: The person can be held for up to 24 hours, extendable to 36 hours. /n Professionals involved: Police, mental health professionals. /n Use: Used when individuals in public places are displaying behaviours indicative of mental disorders, posing risks to themselves or others."
+    }
+]
