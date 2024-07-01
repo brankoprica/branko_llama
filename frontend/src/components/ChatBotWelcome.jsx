@@ -8,7 +8,7 @@ function ChatBotWelcome() {
           <div className="text-6xl animate-wave">👋</div>
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Welcome to my chatbot!</h1>
           <p className="text-gray-600 dark:text-gray-400">
-            Powered by <a className="italic hover:underline">Mistral 7b via llama.cpp </a>
+            Powered by <a href="https://huggingface.co/Qwen/Qwen2-7B-Instruct-GGUF" className="italic hover:underline">Qwen2 7b via llama.cpp </a>
           </p>
         </div>
       </div>

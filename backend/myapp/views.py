@@ -18,7 +18,7 @@ class CreateDocumentView(View):
             data = json.loads(request.body)
             title = data.get('title')
             general_info = data.get('generalInfo', '')
-            content = data.get('content', {})  
+            content = data.get('content', [])  
             exams = data.get('exams', '')
             tags = data.get('tags', '')
             source_url = data.get('sourceUrl')
@@ -31,10 +31,7 @@ class CreateDocumentView(View):
             document = {
                 "title": title,
                 "generalInfo": general_info,
-                "content": {
-                    "sectionTitle": content.get("sectionTitle", ""),
-                    "sectionContent": content.get("sectionContent", "")
-                },
+                "content": content,
                 "exams": exams,
                 "tags": tags,
                 "sourceUrl": source_url,

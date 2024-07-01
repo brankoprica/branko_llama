@@ -3,6 +3,15 @@ import weaviate
 def create_schema():
     client = weaviate.Client("http://localhost:8080")
 
+    try:
+        # First, attempt to delete the existing 'Document' class if it exists
+        client.schema.delete_class("Document")
+        client.schema.delete_class("ChatLog")
+
+        print("Existing 'Document' class deleted successfully.")
+    except Exception as e:
+        print(f"Error deleting existing 'Document' class: {str(e)}")
+    
     document_schema = {
         "class": "Document",
         "properties": [
@@ -18,7 +27,8 @@ def create_schema():
             },
             {
                 "name": "content",
-                "dataType": ["object"],
+                "dataType": ["object[]"],
+                "indexInverted": True,
                 "nestedProperties": [
                     {
                         "name": "sectionTitle", 
@@ -80,6 +90,7 @@ def create_schema():
             }
         }
     }
+
 
     try:
         client.schema.create_class(document_schema)

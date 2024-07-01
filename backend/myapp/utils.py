@@ -45,10 +45,10 @@ def save_document_to_weaviate(document_instance):
     document = {
         "title": document_instance.title,
         "generalInfo": document_instance.generalInfo,
-        "content": {
+        "content": [{
             "sectionTitle": document_instance.content.get("sectionTitle", ""),
             "sectionContent": document_instance.content.get("sectionContent", "")
-        },
+        }],
         "exams": document_instance.exams,
         "tags": document_instance.tags,
         "sourceUrl": document_instance.sourceUrl,
@@ -64,7 +64,7 @@ def fetch_documents_from_weaviate():
             [
                 "title", 
                 "generalInfo", 
-                "content { sectionTitle, sectionContent }",
+                "content [{ sectionTitle, sectionContent }]",
                 "exams", 
                 "tags", 
                 "sourceUrl", 
@@ -96,7 +96,7 @@ def retrieve_related_documents(query):
             [
                 "title", 
                 "generalInfo", 
-                "content { sectionTitle, sectionContent }",
+                "content [{ sectionTitle, sectionContent }]",
                 "exams", 
                 "tags", 
                 "sourceUrl", 
