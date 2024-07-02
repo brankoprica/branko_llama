@@ -10,15 +10,15 @@ import { Switch } from '../components/ui/switch';
 
 function Chat() {
   const [query, setQuery] = useState('');
-  const [messages, setMessages] = useState([]); // Ensure messages is initialized as an array
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [messages, setMessages] = useState([]); 
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [useRAG, setUseRAG] = useState(true)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError('');
-    setLoading(true); // Set loading to true
+    setLoading(true); 
 
     const newMessage = { type: 'user', text: query };
     setMessages(prevMessages => [...prevMessages, newMessage]);
@@ -27,8 +27,6 @@ function Chat() {
     try {
       const res = await axios.post(`${useRAG ? 'http://localhost:8000/api/rag_response/' : 'http://localhost:8000/api/non_rag_chat/'}`, { prompt: query });
       const botResponse = { type: 'bot', text: useRAG ? res.data.generated_text : res.data.response };
-      console.log(botResponse)
-      console.log(res.data)
       setMessages(prevMessages => [...prevMessages, botResponse]);
     } catch (err) {
       setError('Error fetching response. Please try again.');
