@@ -68,9 +68,16 @@ def create_schema():
         "vectorizer": "multi2vec-clip",
         "moduleConfig": {
             "multi2vec-clip": {
-                "textFields": ["query", "response"]
+                "textFields": [
+                    "title", 
+                    "generalInfo", 
+                    "content.sectionContent",
+                    "tags", 
+                    "sourceUrl"
+                ]
             }
         }
+
     }
 
     chat_log_schema = {

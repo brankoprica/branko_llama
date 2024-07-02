@@ -29,7 +29,13 @@ def generate_text_with_context(prompt):
         if not related_items:
             raise ValueError("No related items found")
         
-        context = '\n'.join([f"Topic: {item['topics']}" for item in related_items])
+        context = '\n'.join([
+            f"General Info: {item['generalInfo']}" + 
+            '\n'.join([f"Section Title: {content['sectionTitle']}, Section Content: {content['sectionContent']}" 
+                       for content in item.get('content', [])])  # Use .get() to handle missing 'content'
+            for item in related_items
+        ])
+        
         full_prompt = f"{prompt}\n\nContext:\n{context}"
         return generate_text(full_prompt)
     except Exception as e:
@@ -56,7 +62,12 @@ def save_document_to_weaviate(document_instance):
         "updatedAt": document_instance.updatedAt.isoformat(),
     }
 
-    client.data_object.create(document, "Document")
+    try:
+        client.data_object.create(document, "Document")
+        logger.info(f"Document saved to Weaviate: {document}")
+    except Exception as e:
+        logger.error(f"Error saving document to Weaviate: {e}")
+
 
 def fetch_documents_from_weaviate():
     try:
@@ -92,6 +103,7 @@ def fetch_documents_from_weaviate():
 
 def retrieve_related_documents(query):
     try:
+        logger.info(f"Retrieving related documents for query: {query}")
         response = client.query.get("Document", 
             [
                 "title", 
@@ -103,11 +115,16 @@ def retrieve_related_documents(query):
                 "createdAt", 
                 "updatedAt"
             ]).with_near_text({"concepts": [query]}).do()
-        return response['data']['Get']['Document']
+        print(response)
+        documents = response['data']['Get']['Document']
+        if not documents:
+            logger.info(f"No documents found for query: {query}")
+        else:
+            logger.info(f"Found documents: {documents}")
+        return documents
     except Exception as e:
         logger.error(f"Error in retrieve_related_documents_items: {e}")
         raise e
-
 
 # 
 # TEXTBOOK ITEMS
@@ -130,4 +147,6 @@ def save_textbook_item_to_weaviate(textbook_item):
         "createdAt": textbook_item.created_at.isoformat(),
         "updatedAt": textbook_item.updated_at.isoformat()
     }
+    print('Saved')
+
     client.data_object.create(data_object, "TextbookItem")
