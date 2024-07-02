@@ -77,7 +77,12 @@ Please note that there seem to be quite a few here, I haven't had time to narrow
 pip install -r requirements.txt
 ```
 
-4. Run the Django development server:
+4. Create a .env file in the backend directory and add your Django "SECRET_KEY":
+```plaintext
+SECRET_KEY=your_secret_key_here
+```
+
+5. Run the Django development server:
 *Note: Ensure you have your weaviate container running first*
 ```bash
 python manage.py runserver
