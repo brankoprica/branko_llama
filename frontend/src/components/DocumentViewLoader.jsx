@@ -23,7 +23,7 @@ function DocumentViewLoader() {
                         ))}
                         </div>
                     </div>
-                    <div>
+                    {/* <div>
                         <h3 className="text-lg font-semibold text-center mb-4">Exams</h3>
                         <div className="grid grid-cols-2 gap-2">
                         {[...Array(2)].map((_, index) => (
@@ -33,7 +33,7 @@ function DocumentViewLoader() {
                             </div>
                         ))}
                         </div>
-                    </div>
+                    </div> */}
                     </div>
                 </div>
                 <div class="lg:w-5/6 w-full">

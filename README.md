@@ -1,6 +1,6 @@
 # BrankoLlama
 
-**Note:** This project is currently in progress. Full installation instructions and additional details will be provided soon.
+**Note:** This project is currently in progress. Full installation instructions and additional details will be provided soon. 
 
 ## Overview
 

@@ -29,11 +29,11 @@ function DocumentView() {
     fetchData();
   }, []);
 
-  const handleFilter = (selectedExams, selectedCategories) => {
+  const handleFilter = (selectedExams, selectedTags) => {
     const filtered = data.filter(
       (item) =>
         (selectedExams.length === 0 || selectedExams.some((exam) => item.exams.includes(exam))) &&
-        (selectedCategories.length === 0 || selectedCategories.some((category) => item.categories.includes(category)))
+        (selectedTags.length === 0 || selectedTags.some((tag) => item.tags.includes(tag)))
     );
     setFilteredData(filtered);
   };

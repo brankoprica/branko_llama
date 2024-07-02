@@ -130,7 +130,7 @@ function CreateDocument() {
                         <Input id="sourceUrl" type="text" value={sourceUrl} onChange={(e) => setSourceUrl(e.target.value)} />
                     </section>
                     
-                    <section class="my-2">
+                    {/* <section class="my-2">
                         <Label htmlFor="exams">Exams:</Label>
                         <div className="flex items-center gap-2 mb-4">
                             <Input type="text" placeholder="Add an exam" value={examInput} onChange={(e) => setExamInput(e.target.value)} />
@@ -144,7 +144,7 @@ function CreateDocument() {
                                 </div>
                             ))}
                         </div>
-                    </section>
+                    </section> */}
 
                     {/* Dynamic Tag Input */}
                     <section class="my-2">
