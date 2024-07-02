@@ -64,7 +64,7 @@ def fetch_documents_from_weaviate():
             [
                 "title", 
                 "generalInfo", 
-                "content [{ sectionTitle, sectionContent }]",
+                "content { sectionTitle, sectionContent }",
                 "exams", 
                 "tags", 
                 "sourceUrl", 
@@ -96,7 +96,7 @@ def retrieve_related_documents(query):
             [
                 "title", 
                 "generalInfo", 
-                "content [{ sectionTitle, sectionContent }]",
+                "content { sectionTitle, sectionContent }",
                 "exams", 
                 "tags", 
                 "sourceUrl", 
@@ -105,7 +105,7 @@ def retrieve_related_documents(query):
             ]).with_near_text({"concepts": [query]}).do()
         return response['data']['Get']['Document']
     except Exception as e:
-        logger.error(f"Error in retrieve_related_textbook_items: {e}")
+        logger.error(f"Error in retrieve_related_documents_items: {e}")
         raise e
 
 
