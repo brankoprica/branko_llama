@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import formatDate from '../helper_functions/DateFormat';
 import ExpandableText from '../components/ExpandableText';
 import loader from '../components/ui/loader';
-import FilterTextbooks from '../components/FilterTextbooks';
+import FilterDocuments from '../components/FilterDocuments';
 import Navbar from '../components/Navbar';
 import { Separator } from '../components/ui/separator';
 import DocumentViewLoader from '../components/DocumentViewLoader';
@@ -47,7 +47,7 @@ function DocumentView() {
     <>
       <div class="lg:flex lg:gap-8 sm:gap-4 mx-4 sm:inline">
           <div class="lg:w-1/6 w-full my-8 mx-auto">
-              <FilterTextbooks exams={allExams} tags={allTags} onFilter={handleFilter} />
+              <FilterDocuments exams={allExams} tags={allTags} onFilter={handleFilter} />
           </div>
           <div class="lg:w-5/6 w-full">
               <div className=" mx-auto my-8">

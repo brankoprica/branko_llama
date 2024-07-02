@@ -1,11 +1,10 @@
-// src/components/FilterComponent.js
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Checkbox } from './ui/checkbox';
 import { Label } from './ui/label';
 import { Separator } from './ui/separator';
 
-const FilterComponent = ({ exams, tags, onFilter, loading }) => {
+const FilterDocuments = ({ exams, tags, onFilter, loading }) => {
   const [selectedExams, setSelectedExams] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
 
@@ -84,4 +83,4 @@ const FilterComponent = ({ exams, tags, onFilter, loading }) => {
   );
 };
 
-export default FilterComponent;
+export default FilterDocuments;
