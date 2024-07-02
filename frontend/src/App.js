@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Chat from './pages/Chat';
 import TextbookView from './pages/TextbookView';
 import CreateDocument from './pages/CreateDocument';
+import DocumentView from './pages/DocumentView';
 
 function App() {
     return (
@@ -25,6 +26,10 @@ function App() {
                     <Route 
                         path='/save_document'
                         element={<CreateDocument/>}
+                        />
+                    <Route
+                        path='/documents'
+                        element={<DocumentView />}
                         />
                 </Routes>
             </Router>
