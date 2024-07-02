@@ -10,9 +10,10 @@ BrankoLlama is my local LLM with Retrieval-Augmented Generation (RAG) and fine-t
 1. [Features](#features)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Contributing](#contributing)
-6. [License](#license)
+4. [Getting Started](#getting-started)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## Features
 
@@ -47,6 +48,40 @@ BrankoLlama is my local LLM with Retrieval-Augmented Generation (RAG) and fine-t
 ## Installation
 
 *Instructions coming soon...*
+
+## Getting started
+*Note: This assumes you have cloned the repo and installed all dependencies.*
+
+
+### 1. Run Docker:
+I user Docker Desktop app. Open your weaviate container and run it.
+
+### 2. Run Python server:
+
+1. Wait for Docker container to be up and running as part of the python server run will involve connecting to weaviate
+2. Open terminal and navigate to your /backend directory
+3. Run: 
+```bash
+python manage.py runserver
+```
+
+### 3. Run llama.cpp's llama-server: 
+1. Navigate to llama.cpp server directory
+2. Ensure you have build llama-server in addition to building llama
+3. Run server on your desired port (I choose 8081 as weaviate is on 8080):
+```bash
+llama-server.exe -m models/path/to/your/model -c 2048 --p 8081
+```
+
+### 4. Run frontend:
+1. Navigate to /frontend 
+2. Run:
+
+```bash
+npm start
+```
+
+### 5. Start using your app!
 
 ## Usage
 

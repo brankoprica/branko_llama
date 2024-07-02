@@ -19,8 +19,8 @@ class CreateDocumentView(View):
             title = data.get('title')
             general_info = data.get('generalInfo', '')
             content = data.get('content', [])  
-            exams = data.get('exams', '')
-            tags = data.get('tags', '')
+            exams = data.get('exams', [])
+            tags = data.get('tags', [])
             source_url = data.get('sourceUrl')
 
             created_at = datetime.now().isoformat(timespec='seconds') + 'Z'
