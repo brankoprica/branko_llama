@@ -27,6 +27,8 @@ function Chat() {
     try {
       const res = await axios.post(`${useRAG ? 'http://localhost:8000/api/rag_response/' : 'http://localhost:8000/api/non_rag_chat/'}`, { prompt: query });
       const botResponse = { type: 'bot', text: useRAG ? res.data.generated_text : res.data.response };
+      console.log(botResponse)
+      console.log(res.data)
       setMessages(prevMessages => [...prevMessages, botResponse]);
     } catch (err) {
       setError('Error fetching response. Please try again.');

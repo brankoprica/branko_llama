@@ -103,7 +103,6 @@ def fetch_documents_from_weaviate():
 
 def retrieve_related_documents(query):
     try:
-        logger.info(f"Retrieving related documents for query: {query}")
         response = client.query.get("Document", 
             [
                 "title", 
@@ -114,13 +113,14 @@ def retrieve_related_documents(query):
                 "sourceUrl", 
                 "createdAt", 
                 "updatedAt"
-            ]).with_near_text({"concepts": [query]}).do()
-        print(response)
+            ]).with_near_text({
+                "concepts": [query],
+            }).do()
         documents = response['data']['Get']['Document']
         if not documents:
             logger.info(f"No documents found for query: {query}")
         else:
-            logger.info(f"Found documents: {documents}")
+            logger.info(f"Found {len(documents)} documents.")
         return documents
     except Exception as e:
         logger.error(f"Error in retrieve_related_documents_items: {e}")

@@ -41,7 +41,6 @@ class CreateDocumentView(View):
 
             client.data_object.create(document, "Document")
 
-            print('document saved')
             return JsonResponse({'status': 'success', 'Document': document}, status=201)
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)}, status=500)

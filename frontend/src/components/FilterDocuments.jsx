@@ -8,10 +8,7 @@ const FilterDocuments = ({ exams, tags, onFilter }) => {
   const [selectedExams, setSelectedExams] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
 
-  useEffect(() => {
-    setSelectedTags(tags);
-    setSelectedExams(exams);
-  }, [tags, exams]);
+
 
   const handleExamChange = (value, checked) => {
     setSelectedExams((prev) =>
@@ -20,7 +17,6 @@ const FilterDocuments = ({ exams, tags, onFilter }) => {
   };
 
   const handleTagChange = (value, checked) => {
-    console.log('triggered')
     setSelectedTags((prev) =>
       checked ? [...prev, value] : prev.filter((tag) => tag !== value)
     );
