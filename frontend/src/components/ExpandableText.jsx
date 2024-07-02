@@ -29,7 +29,6 @@ const ExpandableText = ({ content, loading }) => {
 
     return (
         <div className='text-sm'>
-            
                 <div className='ml-2'>
                     <p>{isExpanded ? content.map((item, index) => (
                         <div key={index} className='my-2'>

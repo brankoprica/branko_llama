@@ -20,7 +20,7 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="/textbook" className="hover:text-gray-300" >
+              <a href="/documents" className="hover:text-gray-300" >
                 View documents
               </a>
             </li>

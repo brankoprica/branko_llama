@@ -28,7 +28,7 @@ function Home() {
                 <p className="text-sm text-muted-foreground">Upload your documents to your vector database.</p>
                 </a>
                 <a
-                href="/textbook"
+                href="/documents"
                 className="bg-background border border-input rounded-lg p-6 flex flex-col items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring transition-colors"
                 prefetch={false}
                 >

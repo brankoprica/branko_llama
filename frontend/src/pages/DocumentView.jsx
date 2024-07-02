@@ -8,6 +8,7 @@ import loader from '../components/ui/loader';
 import FilterTextbooks from '../components/FilterTextbooks';
 import Navbar from '../components/Navbar';
 import { Separator } from '../components/ui/separator';
+import DocumentViewLoader from '../components/DocumentViewLoader';
 
 function DocumentView() {
   const [loading, setLoading] = useState(true);
@@ -37,17 +38,17 @@ function DocumentView() {
     setFilteredData(filtered);
   };
 
-  if (loading) return  <Navbar />  ;
+  if (loading) return  <DocumentViewLoader />  ;
 
   const allExams = [...new Set(data.flatMap((item) => item.exams))];
-  const allCategories = [...new Set(data.flatMap((item) => item.categories))];
+  const allTags = [...new Set(data.flatMap((item) => item.tags))];
 
   return (
     <>
       <Navbar />
       <div class="lg:flex lg:gap-8 sm:gap-4 mx-4 sm:inline">
           <div class="lg:w-1/6 w-full my-8 mx-auto">
-              {/* <FilterTextbooks exams={allExams} categories={allCategories} onFilter={handleFilter} /> */}
+              <FilterTextbooks exams={allExams} tags={allTags} onFilter={handleFilter} />
           </div>
           <div class="lg:w-5/6 w-full">
               <div className=" mx-auto my-8">
@@ -62,11 +63,10 @@ function DocumentView() {
                             <CardTitle>
                                 {index + 1}. <span className="underline">Title:</span> {item.title}
                             </CardTitle>
-                            <CardDescription>
-                                <div className="left-side">
-                                    <div>Exams: {item.exams.join(', ')}</div>
-                                    <div>Tags: {item.tags.join(', ')}</div>
-                                </div>
+                            <CardDescription className="text-xs">
+                                {item.exams.length > 0 && <div>Exams: {item.exams.join(', ')}</div>}
+                                {item.tags.length > 0 && <div>Tags: {item.tags.join(', ')}</div>}
+                                {item.sourceUrl !== '' && <div>Source URL: {item.sourceUrl}</div>}
                                 <div className="right-side">Created on: {formatDate(item.createdAt)}</div>
                             </CardDescription>
                             <Separator orientation="horizontal" />
