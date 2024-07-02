@@ -6,6 +6,10 @@
 
 BrankoLlama is my local LLM with Retrieval-Augmented Generation (RAG). This mono repo consists of both frontend and backend components designed to help others set up and interact with their own LLM with RAG. Intended for use with llama.cpp and .gguf models. My personal choice at the moment is Qwen2 7b Instruct (https://huggingface.co/Qwen/Qwen2-7B-Instruct-GGUF/tree/main)
 
+## Demo
+
+https://youtu.be/ZdK7yZtbVwY 
+
 ## Table of Contents
 1. [Features](#features)
 2. [Technologies](#technologies)
