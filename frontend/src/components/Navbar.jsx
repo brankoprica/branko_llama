@@ -15,7 +15,7 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="/new_textbook" className="hover:text-gray-300" >
+              <a href="/save_document" className="hover:text-gray-300" >
                 Upload Documents
               </a>
             </li>

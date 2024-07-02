@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Chat from './pages/Chat';
 import TextbookView from './pages/TextbookView';
-import CreateTextbookItem from './pages/CreateTextbookItem';
+import CreateDocument from './pages/CreateDocument';
 
 function App() {
     return (
@@ -23,8 +23,8 @@ function App() {
                         element={<TextbookView />}
                         />
                     <Route 
-                        path='/new_textbook'
-                        element={<CreateTextbookItem/>}
+                        path='/save_document'
+                        element={<CreateDocument/>}
                         />
                 </Routes>
             </Router>

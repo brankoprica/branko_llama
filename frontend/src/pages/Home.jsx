@@ -19,7 +19,7 @@ function Home() {
                 <p className="text-sm text-muted-foreground">Interact with your LLM.</p>
                 </a>
                 <a
-                href="/new_textbook"
+                href="/save_document"
                 className="bg-background border border-input rounded-lg p-6 flex flex-col items-center justify-center gap-2 hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring transition-colors"
                 prefetch={false}
                 >
