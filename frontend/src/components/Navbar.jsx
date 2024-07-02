@@ -1,6 +1,10 @@
 import React from 'react'
+import { Button } from './ui/button'
+import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
+  const navigate = useNavigate()
+
   return (
     <header className="bg-black text-white py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -10,19 +14,19 @@ function Navbar() {
         <nav>
           <ul className="flex space-x-4">
             <li>
-              <a href="/chat" className="hover:text-gray-300" >
+              <Button className="text-white" variant='link' onClick={() => navigate('/chat')}>
                 Chat
-              </a>
+              </Button>
             </li>
             <li>
-              <a href="/save_document" className="hover:text-gray-300" >
+              <Button className="text-white" variant='link' onClick={() => navigate('/save_document')}>
                 Upload Documents
-              </a>
+              </Button>
             </li>
             <li>
-              <a href="/documents" className="hover:text-gray-300" >
-                View documents
-              </a>
+              <Button className="text-white" variant='link' onClick={() => navigate('/documents')}>
+                View Documents
+              </Button>
             </li>
           </ul>
         </nav>

@@ -7,7 +7,6 @@ import { Separator } from './ui/separator'
 function DocumentViewLoader() {
     return (
         <>
-            <Navbar />
             <div class="lg:flex lg:gap-8 sm:gap-4 mx-4 sm:inline">
                 <div class="lg:w-1/6 w-full my-8 mx-auto">
                 
@@ -43,7 +42,7 @@ function DocumentViewLoader() {
                     </div>
                     <div className=" mx-auto my-4">
                         <ul>
-                        {[...Array(4)].map((_, index) => (
+                        {[...Array(2)].map((_, index) => (
                             <li class="my-4">
                                 <Card>
                                     <CardHeader className='pb-2 px-6 pt-6'>
@@ -51,12 +50,12 @@ function DocumentViewLoader() {
                                             <Skeleton className="w-1/3 h-10" />
                                         </CardTitle>
                                         <CardDescription>
-                                            <Skeleton className="w-1/5 h-16" />
+                                            <Skeleton className="w-1/5 h-12" />
                                         </CardDescription>
                                         <Separator orientation="horizontal" />
                                     </CardHeader>
                                     <CardContent>
-                                        <Skeleton className="w-full h-20"/>
+                                        <Skeleton className="w-full h-28"/>
                                     </CardContent>
                                 </Card>
                             </li>

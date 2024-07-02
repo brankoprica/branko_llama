@@ -93,7 +93,6 @@ function CreateDocument() {
 
     return (
         <div>
-            <Navbar />
             <div className="w-full max-w-md mx-auto px-4 py-8">
                 <h2 className="text-2xl font-bold mb-6">Create New Document</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">

@@ -45,7 +45,6 @@ function DocumentView() {
 
   return (
     <>
-      <Navbar />
       <div class="lg:flex lg:gap-8 sm:gap-4 mx-4 sm:inline">
           <div class="lg:w-1/6 w-full my-8 mx-auto">
               <FilterTextbooks exams={allExams} tags={allTags} onFilter={handleFilter} />
