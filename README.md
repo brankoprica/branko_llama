@@ -10,10 +10,9 @@ BrankoLlama is my local LLM with Retrieval-Augmented Generation (RAG) and fine-t
 1. [Features](#features)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Getting Started](#getting-started)
-5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ## Features
 
@@ -49,7 +48,7 @@ BrankoLlama is my local LLM with Retrieval-Augmented Generation (RAG) and fine-t
 
 *Instructions coming soon...*
 
-## Getting started
+## Usage
 *Note: This assumes you have cloned the repo and installed all dependencies.*
 
 
@@ -82,10 +81,6 @@ npm start
 ```
 
 ### 5. Start using your app!
-
-## Usage
-
-*Instructions coming soon...*
 
 ## Contributing
 
